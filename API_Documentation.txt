@@ -1,0 +1,70 @@
+Base URL:  
+http://localhost:8080/task/crud
+_________________________________________________________________
+500 Internal Server Error: Returned if there is a server-side issue during any request.
+_________________________________________________________________
+1. Create a Task
+URL: /createTask
+Method: POST
+Description: Creates a new task.
+Request Body:
+json
+{
+  "title": "Task Title",
+  "description": "Task Description",
+  "dueDate": "YYYY-MM-DD",
+  "status": "complete" // Optional, defaults to "incomplete"
+}
+
+Response:
+201 Created: Task created successfully.
+400 Bad Request: If required fields (title, dueDate) are missing or if the task already exists.
+________________________________________________________________
+
+2. Read All Tasks
+URL: /readTasks
+Method: GET
+Description: Retrieves all tasks.
+Response:
+200 OK: Returns a list of tasks.
+400 Bad Request: If no tasks are available.
+________________________________________________________________
+3. Update a Task
+URL: /updateTask/:id
+Method: PUT
+Description: Updates a task by ID.
+Request Params: id (task ID)
+Request Body: Fields to be updated (e.g., title, description, dueDate, status)
+Response:
+200 OK: Task updated successfully.
+404 Not Found: If the task does not exist.
+________________________________________________________________
+4. Delete a Task
+URL: /deleteTask/:id
+Method: DELETE
+Description: Deletes a task by ID.
+Request Params: id (task ID)
+Response:
+200 OK: Task deleted successfully.
+404 Not Found: If the task does not exist.
+________________________________________________________________
+5. Mark Task Status
+URL: /markTask/:id/:status
+Method: PATCH
+Description: Marks a task's status as complete or incomplete.
+Request Params:
+id (task ID)
+status (either complete or incomplete)
+Response:
+200 OK: Task marked successfully.
+404 Not Found: If status is not complete or incomplete, or the task does not exist.
+________________________________________________________________
+6. Filter Tasks by Status
+URL: /filterByStatus/:status
+Method: GET
+Description: Retrieves tasks based on their status (complete or incomplete).
+Request Params: status (either complete or incomplete)
+Response:
+200 OK: Tasks with the specified status retrieved successfully.
+404 Not Found: If the status is not complete or incomplete.
+________________________________________________________________
