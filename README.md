@@ -10,15 +10,12 @@ git clone https://github.com/ShazaMohamed/Task-Manager-CRUD.git
 
 3- install express, mongoose, nodemon
 
-4- add "serve": "node server.js",
-        "dev": "nodemon server.js"   to package.json if it doesn't exist
+4- create a connection in MongoDB Compass 
 
-5- create a connection in MongoDB Compass 
+5- put the MongoDB URI in dataBaseConnection variable
 
-6- put the MongoDB URI in dataBaseConnection variable
+6- use npm run dev to launch the sever and connect to db
 
-7- use npm run dev to launch the sever and connect to db
-
-8- in postman create requests as explained in API Documentation file 
+7- in postman create requests as explained in API Documentation file 
 
 use http://localhost:8080/task/crud as the base URL
